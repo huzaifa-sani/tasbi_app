@@ -1,36 +1,196 @@
 import 'package:degital_tasbi/View/widget/castom_appbar.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+
+  int num =0;
+  int  currentIndex = 0;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // ata amer apps bar
-      appBar: AppBar(
-        title: Center(child: Text("Digital Tasbi",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)),
-        backgroundColor: Colors.green.shade200,
+      backgroundColor: Colors.lightGreen.shade100,
+      
+      appBar: PreferredSize(preferredSize: Size.fromHeight(65), child: CastomAppba()),
 
-
-
-
-      ),
-
-      body: Column(
-
+      body:
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
 
+          Column(
+            children: [
+              Center(
+                child: Container(
+                  height: 170,
+                  width: 170,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+
+                      Center(child:
+                      Text(
+                        "${num}",style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 38
+                      ),)),
+
+                    ],
+                  ),
+
+                  decoration: BoxDecoration(
+
+                      color: Colors.lightGreen,
+                      borderRadius: BorderRadius.circular(100),
+                      border: Border.all(width: 3,color: Colors.blue)
+
+                  ),
+
+                ),
+              ),
+            ],
+
+          ),
+          SizedBox(height: 10,),
+
+          Text("Count one by one",style: TextStyle(
+              color: Colors.blue,
+              fontWeight: FontWeight.bold,
+              fontSize: 20
+
+          ),),
+
+          Padding(padding: EdgeInsets.symmetric(vertical: 30)),
 
 
+
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+            children: [
+
+              SizedBox(
+                  height: 40,
+                  width: 150,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.greenAccent,
+                          foregroundColor: Colors.black
+
+                      ),
+                      onPressed: (){
+                        setState(() {
+
+                          if(num <= 0){
+
+
+                          }else{
+                            num = num-1;
+
+
+                          }
+
+                        });
+
+                      }, child: Text("Sub One"))),
+              SizedBox(
+                  height: 40,
+                  width: 150,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.greenAccent,
+                          foregroundColor: Colors.black
+
+                      ),
+                      onPressed: (){
+
+                        setState(() {
+
+                          num = 0;
+
+
+                        });
+
+                      }, child: Text("Reasat"))),
+            ],
+          ),
+
+          Padding(padding: EdgeInsets.symmetric(vertical: 15)),
+
+
+          SizedBox(
+              height: 45,
+              width: 150,
+              child: ElevatedButton(
+
+
+                  style: ElevatedButton.styleFrom(
+
+                      shape:RoundedRectangleBorder(
+
+                          borderRadius: BorderRadius.circular(10)
+
+                      ) ,
+
+                      backgroundColor: Colors.blue,
+                      foregroundColor: Colors.white
+
+
+                  ),
+                  onPressed: (){
+                    setState(() {
+
+                      num +=1;
+                    });
+
+
+
+                  }, child: Text("Add One"))),
 
 
         ],
 
-      ),
-      
+      )
+      ,
 
-      //bottomNavigationBar: BottomNavigationBar(items: ),
+
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.lightGreen,
+      currentIndex: currentIndex,
+      onTap: (index) {
+        setState(() {
+          currentIndex = index;
+        });
+      },
+      items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.menu),
+
+          label: "Menu",
+
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.search),
+          label: "Search",
+
+
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.settings),
+
+          label: "settings",
+        ),
+      ],
+    ),
+
     );
   }
 }
