@@ -1,5 +1,6 @@
 import 'package:degital_tasbi/View/widget/castom_appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                         "${num}",style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 38
+                          fontSize: 38.sp
                       ),)),
 
                     ],
@@ -48,8 +49,8 @@ class _HomePageState extends State<HomePage> {
                   decoration: BoxDecoration(
 
                       color: Colors.lightGreen,
-                      borderRadius: BorderRadius.circular(100),
-                      border: Border.all(width: 3,color: Colors.blue)
+                      borderRadius: BorderRadius.circular(100.r),
+                      border: Border.all(width: 3.r,color: Colors.blue)
 
                   ),
 
@@ -58,16 +59,16 @@ class _HomePageState extends State<HomePage> {
             ],
 
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 10.r,),
 
           Text("Count one by one",style: TextStyle(
               color: Colors.blue,
               fontWeight: FontWeight.bold,
-              fontSize: 20
+              fontSize: 20.sp
 
           ),),
 
-          Padding(padding: EdgeInsets.symmetric(vertical: 30)),
+          Padding(padding: EdgeInsets.symmetric(vertical: 30.r)),
 
 
 
@@ -78,8 +79,8 @@ class _HomePageState extends State<HomePage> {
             children: [
 
               SizedBox(
-                  height: 40,
-                  width: 150,
+                  height: 40.h,
+                  width: 150.w,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.greenAccent,
@@ -102,8 +103,8 @@ class _HomePageState extends State<HomePage> {
 
                       }, child: Text("Sub One"))),
               SizedBox(
-                  height: 40,
-                  width: 150,
+                  height: 40.h,
+                  width: 150.w,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.greenAccent,
@@ -123,12 +124,12 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
 
-          Padding(padding: EdgeInsets.symmetric(vertical: 15)),
+          Padding(padding: EdgeInsets.symmetric(vertical: 15.r)),
 
 
           SizedBox(
-              height: 45,
-              width: 150,
+              height: 45.h,
+              width: 150.w,
               child: ElevatedButton(
 
 
